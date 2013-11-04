@@ -35,19 +35,19 @@ You can customize the ad control by declaring an AE object in a script tag above
     </tr>
     <tr>
         <td>platform</td>
-        <td>WIN8 only supported right now. WP8 and WP75</td>
+        <td>"WIN8" only supported right now. WP8 and WP75 coming soon.</td>
     </tr>
     <tr>
         <td>City</td>
-        <td></td>
+        <td>E.g. "Austin"</td>
     </tr>
     <tr>
         <td>state</td>
-        <td>Two letter state abreviation. E.g. TX, CA, NY.</td>
+        <td>E.g. "TX"</td>
     </tr>
     <tr>
         <td>countryCode</td>
-        <td></td>
+        <td>E.g. "USA"</td>
     </tr>
     <tr>
         <td>creditRegion</td>
