@@ -101,6 +101,8 @@ var AE = AE || {};
 
       getAds();
       
-      setInterval(getAds, 10000);
+      if (AE.rotate !== false) {
+        setInterval(getAds, AE.rotateTimer || 10000);
+      }
 
 })(window, AE);
