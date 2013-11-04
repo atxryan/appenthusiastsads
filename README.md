@@ -24,9 +24,30 @@ You can customize the ad control by declaring an AE object in a script tag above
     <script>
         var AE = {
             query : "?state=TX&platform=WIN8",
-            width: "300px"
+            width: "300",
+            injectStyles: false
         }
     </script>
+    
+    
+<table>
+    <tr>
+        <th>Option</th>
+        <th>Possible values</th>
+    </tr>
+    <tr>
+        <td>query</td>
+        <td>Optional query string to filter the ads returned.</td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>Width of the ad image; Defaults to 200;</td>
+    </tr>
+    <tr>
+        <td>injectStyles</td>
+        <td>Defaults to true; Set to false if you don't want any CSS styles applied or if you will apply your own.</td>
+    </tr>
+</table>
 
 <table>
     <tr>
