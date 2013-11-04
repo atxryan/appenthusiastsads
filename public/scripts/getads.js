@@ -3,6 +3,10 @@ var AE = AE || {};
 
     AE.query = AE.query || "";
     
+    if (AE.injectStyles !== false) {
+        injectStyles();
+    }
+    
     var httpRequest, ads, 
         url =  "https://appenthusiasts.azure-mobile.net/api/ads/" + AE.query,
         adWidth = AE.width || "200px";
