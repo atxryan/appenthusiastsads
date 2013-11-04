@@ -1,0 +1,25 @@
+{
+  "name": "appenthusiastsads",
+  "version": "0.0.1",
+  "description": "Ad server for Microsoft DPE App Enthusiasts",
+  "main": "server.js",
+  "dependencies": {
+    "connect": "~2.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atxryan/appenthusiastsads.git"
+  },
+  "author": "Ryan Joy",
+  "license": "WTF",
+  "readmeFilename": "README.md",
+  "gitHead": "0ed7fcfa34ac60400565261131641276c5a72a1f",
+  "bugs": {
+    "url": "https://github.com/atxryan/appenthusiastsads/issues"
+  }
+}
