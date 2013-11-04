@@ -1,4 +1,3 @@
-
 var AE = AE || {};
 (function (global, AE, undefined) {
 
@@ -75,6 +74,21 @@ var AE = AE || {};
             console.log('There was a problem with the request.');
           }
         }
+      }
+      
+      function injectStyles() {
+      var css = '#AppEnthusiastAd { background: red; text-align: center; }',
+            head = document.getElementsByTagName('head')[0],
+            style = document.createElement('style');
+        
+        style.type = 'text/css';
+        if (style.styleSheet){
+          style.styleSheet.cssText = css;
+        } else {
+          style.appendChild(document.createTextNode(css));
+        }
+        
+        head.appendChild(style);
       }
 
       getAds();
