@@ -3,7 +3,7 @@ var AE = AE || {};
 (function (global, AE, undefined) {
 
     var httpRequest, ads, 
-        url = AE.url || "https://appenthusiasts.azure-mobile.net/api/ads/",
+        url =  "https://appenthusiasts.azure-mobile.net/api/ads/" + AE.query,
         adWidth = AE.width || "200px";
         
     function shuffle(array) {
@@ -43,10 +43,11 @@ var AE = AE || {};
           console.log('[ads] Cannot create an XMLHTTP instance');
           return false;
         }
+        
         httpRequest.onreadystatechange = displayAd;
         httpRequest.open('GET', url);
         httpRequest.send();
-      }
+    }
 
     function displayAd() {
         var adJSON, ad, adString;

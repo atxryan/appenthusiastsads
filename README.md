@@ -20,6 +20,14 @@ This will generate the following sample markup in your HTML:
 
 You can customize the ad control by declaring an AE object in a script tag above the getads.js tag. Width and query parameters are currently supported.
 
+
+    <script>
+        var AE = {
+            query : "?state=TX&platform=WIN8",
+            width: "300px"
+        }
+    </script>
+
 <table>
     <tr>
         <td>Query param</td>
@@ -46,10 +54,3 @@ You can customize the ad control by declaring an AE object in a script tag above
         <td>US DPE regions: USW, USC, or USE</td>
     </tr>
 </table>
-
-    <script>
-        var AE = {
-            url : "https://appenthusiasts.azure-mobile.net/api/ads/?state=TX&platform=WIN8",
-            width: "300px"
-        }
-    </script>
