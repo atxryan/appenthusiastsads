@@ -9,7 +9,7 @@ var AE = AE || {};
     
     var httpRequest, ads, 
         url =  "https://appenthusiasts.azure-mobile.net/api/ads/" + AE.query,
-        AE.width = AE.width || 200;
+        adWidth = AE.width || 200;
         
     function shuffle(array) {
         var counter = array.length, temp, index;
@@ -68,7 +68,7 @@ var AE = AE || {};
             ad = shuffle(adJSON)[0];
 
             adString = "<a href='http://apps.microsoft.com/windows/en-us/app/" + ad.storeId + "'>" +
-                           "<img src='" + ad.tileImageUrl + "' width='" + AE.width + "' />" +
+                           "<img src='" + ad.tileImageUrl + "' width='" + adWidth + "' />" +
                            "<span>Download " + ad.title + " for Windows 8 today!</span></a>"
 
             div.innerHTML = adString;
