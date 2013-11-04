@@ -3,7 +3,7 @@ var AE = AE || {};
 (function (global, AE, undefined) {
 
     var httpRequest, ads, 
-        url = AE.url || "https://ryan-storagedemo.azure-mobile.net/api/ads",
+        url = AE.url || "https://appenthusiasts.azure-mobile.net/api/ads/",
         adWidth = AE.width || "200px";
         
     function shuffle(array) {
