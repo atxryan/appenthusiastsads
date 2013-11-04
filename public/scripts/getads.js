@@ -33,13 +33,13 @@ var AE = AE || {};
     function displayAd() {
         var elem = document.getElementById("AEadControl");
         var div = document.createElement("div");
+            div.id = "AppEnthusiastAd";
         
 
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
             
             var adJSON = JSON.parse(httpRequest.responseText);
-            console.log(adJSON);
 
             var adString = "<a href='http://apps.microsoft.com/windows/en-us/app/" + adJSON.storeId + "'>" +
                            "<img src='" + adJSON.tileImageUrl + "' width='200' />" +
@@ -55,4 +55,5 @@ var AE = AE || {};
       }
 
       getAds();
+
 })(window, AE);
