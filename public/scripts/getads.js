@@ -96,5 +96,7 @@ var AE = AE || {};
       }
 
       getAds();
+      
+      setInterval(getAds, 10000);
 
 })(window, AE);
