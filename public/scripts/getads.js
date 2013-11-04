@@ -2,6 +2,8 @@
 var AE = AE || {};
 (function (global, AE, undefined) {
 
+    AE.query = AE.query || "";
+    
     var httpRequest, ads, 
         url =  "https://appenthusiasts.azure-mobile.net/api/ads/" + AE.query,
         adWidth = AE.width || "200px";
