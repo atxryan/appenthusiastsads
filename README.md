@@ -47,6 +47,14 @@ You can customize the ad control by declaring an AE object in a script tag above
         <td>injectStyles</td>
         <td>Defaults to true; Set to false if you don't want any CSS styles applied or if you will apply your own.</td>
     </tr>
+    <tr>
+        <td>rotate</td>
+        <td>Defaults to true; Set to false if you don't want ads to rotate on a setInterval timer</td>
+    </tr>
+    <tr>
+        <td>rotateTimer</td>
+        <td>Defaults to 10000;</td>
+    </tr>
 </table>
 
 <table>
