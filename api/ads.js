@@ -1,5 +1,5 @@
 exports.post = function(request, response) {
-    response.send(statusCodes.OK, { message : 'Hello World!' });
+    response.send(statusCodes.FORBIDDEN, { message : 'Posts not allowed' });
 };
 
 exports.get = function(request, response) {
