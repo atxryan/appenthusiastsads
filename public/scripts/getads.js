@@ -9,7 +9,7 @@ var AE = AE || {};
     
     var httpRequest, ads, 
         url =  "https://appenthusiasts.azure-mobile.net/api/ads/" + AE.query,
-        adWidth = AE.width || 200;
+        AE.width = AE.width || 200;
         
     function shuffle(array) {
         var counter = array.length, temp, index;
