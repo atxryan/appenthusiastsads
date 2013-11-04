@@ -3,8 +3,26 @@ var AE = AE || {};
 (function (global, AE, undefined) {
 
     var httpRequest, ads, 
-        url = "http://appenthusiastsads.azurewebsites.net/ads";
+        url = AE.url || "https://ryan-storagedemo.azure-mobile.net/api/ads",
+        adWidth = AE.width || "200px";
         
+    function shuffle(array) {
+        var counter = array.length, temp, index;
+
+        // While there are elements in the array
+        while (counter--) {
+            // Pick a random index
+            index = (Math.random() * counter) | 0;
+
+            // And swap the last element with it
+            temp = array[counter];
+            array[counter] = array[index];
+            array[index] = temp;
+        }
+
+        return array;
+    }
+
     function getAds() {
         
         if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -31,6 +49,7 @@ var AE = AE || {};
       }
 
     function displayAd() {
+        var adJSON, ad, adString;
         var elem = document.getElementById("AEadControl");
         var div = document.createElement("div");
             div.id = "AppEnthusiastAd";
@@ -39,11 +58,12 @@ var AE = AE || {};
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
             
-            var adJSON = JSON.parse(httpRequest.responseText);
+            adJSON = JSON.parse(httpRequest.responseText);
+            ad = shuffle(adJSON)[0];
 
-            var adString = "<a href='http://apps.microsoft.com/windows/en-us/app/" + adJSON.storeId + "'>" +
-                           "<img src='" + adJSON.tileImageUrl + "' width='200' />" +
-                           "<span>Download " + adJSON.title + " for Windows 8 today!</span></a>"
+            adString = "<a href='http://apps.microsoft.com/windows/en-us/app/" + ad.storeId + "'>" +
+                           "<img src='" + ad.tileImageUrl + "' width='" + AE.width + "' />" +
+                           "<span>Download " + ad.title + " for Windows 8 today!</span></a>"
 
             div.innerHTML = adString;
             elem.parentNode.insertBefore(div, elem)
@@ -55,7 +75,5 @@ var AE = AE || {};
       }
 
       getAds();
-
-      
 
 })(window, AE);
