@@ -57,9 +57,13 @@ var AE = AE || {};
     function displayAd() {
         var adJSON, ad, adString;
         var elem = document.getElementById("AEadControl");
-        var div = document.createElement("div");
+        var div;
+        if (document.getElementById("AppEnthusiastAd") != null) {
+            div = document.getElementById("AppEnthusiastAd");
+        } else {
+            div = document.createElement("div");
             div.id = "AppEnthusiastAd";
-        
+        }
 
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
