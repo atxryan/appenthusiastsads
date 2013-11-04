@@ -9,7 +9,7 @@ var AE = AE || {};
     
     var httpRequest, ads, 
         url =  "https://appenthusiasts.azure-mobile.net/api/ads/" + AE.query,
-        adWidth = AE.width || "200px";
+        adWidth = AE.width || 200;
         
     function shuffle(array) {
         var counter = array.length, temp, index;
@@ -81,7 +81,7 @@ var AE = AE || {};
       }
       
       function injectStyles() {
-      var css = '#AppEnthusiastAd { background: red; text-align: center; }',
+        var css = '#AppEnthusiastAd {text-align: center; }',
             head = document.getElementsByTagName('head')[0],
             style = document.createElement('style');
         
