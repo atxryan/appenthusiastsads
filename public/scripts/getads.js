@@ -1,6 +1,15 @@
 var AE = AE || {};
 (function (global, AE, undefined) {
 
+    /* We're relying on native JSON support in the browser. 
+       If it's not there, we'll abandon the effort.
+       http://caniuse.com/json 
+       IE8+, Chrome, Firefox 3.0+, Safari 4.0+ 
+    */ 
+    if (!JSON & !JSON.parse) {
+        return;
+    }
+
     var httpRequest, ads,
         url = "https://appenthusiasts.azure-mobile.net/api/ads/" + (AE.query || ""),
         adWidth = AE.width || 200;
@@ -54,7 +63,7 @@ var AE = AE || {};
 
     function displayAd() {
         var adJSON, ad, adString, div,
-            elem = document.getElementById("AEadControl");
+            scriptElem = document.getElementById("AEadControl");
 
 
         if (document.getElementById("AppEnthusiastAd") != null) {
@@ -75,7 +84,7 @@ var AE = AE || {};
                     "<span>Download " + ad.title + " for Windows 8 today!</span></a>"
 
                 div.innerHTML = adString;
-                elem.parentNode.insertBefore(div, elem)
+                scriptElem.parentNode.insertBefore(div, scriptElem)
 
             } else {
                 console.log('There was a problem with the request.');
@@ -84,7 +93,9 @@ var AE = AE || {};
     }
 
     function injectStyles() {
-        var css = '#AppEnthusiastAd {text-align: center; }',
+        var css = '#AppEnthusiastAd {text-align: center; padding: 0; margin: 0; width: ' + adWidth + 'px; min-height: 175px;}' +
+                  '#AppEnthusiastAd img { padding: 0; margin: 0; border: none; }' +
+                  '#AppEnthusiastAd span {display: block; font-size: 13px;}',
             head = document.getElementsByTagName('head')[0],
             style = document.createElement('style');
             style.type = 'text/css';
