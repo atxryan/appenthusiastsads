@@ -83,3 +83,7 @@ You can customize the ad control by declaring an AE object in a script tag above
         <td>US DPE regions: USW, USC, or USE</td>
     </tr>
 </table>
+
+## Feedback?
+
+Open an issue or email ryanjoy@microsoft.com.

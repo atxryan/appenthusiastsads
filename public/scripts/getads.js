@@ -114,8 +114,8 @@ var AE = AE || {};
 
     // Rotate the ads by calling getAds every 10 seconds
     // TODO: If the query string has not changed, this should be cached.
-    if (AE.rotate !== false) {
+    /* if (AE.rotate !== false) {
         setInterval(getAds, AE.rotateTimer || 10000);
-    }
+    } */
 
 })(window, AE);
