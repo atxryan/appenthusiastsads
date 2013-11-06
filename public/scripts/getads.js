@@ -56,12 +56,24 @@ var AE = AE || {};
             return false;
         }
 
-        httpRequest.onreadystatechange = displayAd;
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                displayAd(httpRequest.responseText);
+
+                // Cache the response in localStorage
+                localStorage.setItem('AppEnthusiastAds', httpRequest.responseText);
+                localStorage.setItem('AppEnthusiastAdstimestamp', (new Date()).getTime());
+            } else {
+                console.log('There was a problem with the request.');
+            }
+        }};
         httpRequest.open('GET', url);
         httpRequest.send();
+        console.log("Called " + url); 
     }
 
-    function displayAd() {
+    function displayAd(ads) {
         var adJSON, ad, adString, div,
             scriptElem = document.getElementById("AEadControl");
 
@@ -73,23 +85,16 @@ var AE = AE || {};
             div.id = "AppEnthusiastAd";
         }
 
-        if (httpRequest.readyState === 4) {
-            if (httpRequest.status === 200) {
+        adJSON = JSON.parse(ads);
+        ad = shuffle(adJSON)[0];
 
-                adJSON = JSON.parse(httpRequest.responseText);
-                ad = shuffle(adJSON)[0];
+        adString = "<a href='http://apps.microsoft.com/windows/en-us/app/" + ad.storeId + "'>" +
+            "<img src='" + ad.tileImageUrl + "' width='" + adWidth + "' />" +
+            "<span>Download " + ad.title + " for Windows 8 today!</span></a>"
 
-                adString = "<a href='http://apps.microsoft.com/windows/en-us/app/" + ad.storeId + "'>" +
-                    "<img src='" + ad.tileImageUrl + "' width='" + adWidth + "' />" +
-                    "<span>Download " + ad.title + " for Windows 8 today!</span></a>"
-
-                div.innerHTML = adString;
-                scriptElem.parentNode.insertBefore(div, scriptElem)
-
-            } else {
-                console.log('There was a problem with the request.');
-            }
-        }
+        div.innerHTML = adString;
+        scriptElem.parentNode.insertBefore(div, scriptElem)
+         
     }
 
     function injectStyles() {
@@ -110,7 +115,13 @@ var AE = AE || {};
     }
 
     // Kick off the first call to the App Enthusiasts
-    getAds();
+
+    if (localStorage.getItem('AppEnthusiastAds')) {
+        displayAd(localStorage.getItem('AppEnthusiastAds'));
+    } else {
+        getAds();
+    }
+    
 
     // Rotate the ads by calling getAds every 10 seconds
     // TODO: If the query string has not changed, this should be cached.
