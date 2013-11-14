@@ -59,8 +59,8 @@ You can customize the ad control by declaring an AE object in a script tag above
 
 <table>
     <tr>
-        <td>Query param</td>
-        <td>Possible values</td>
+        <th>Query param</th>
+        <th>Possible values</th>
     </tr>
     <tr>
         <td>platform</td>

@@ -98,7 +98,7 @@ var AE = AE || {};
     }
 
     function injectStyles() {
-        var css = '#AppEnthusiastAd {text-align: center; padding: 0; margin: 0; width: ' + adWidth + 'px; min-height: 175px;}' +
+        var css = '#AppEnthusiastAd {text-align: center; padding: 0; margin: 0 auto; width: ' + adWidth + 'px; min-height: 175px;}' +
                   '#AppEnthusiastAd img { padding: 0; margin: 0; border: none; }' +
                   '#AppEnthusiastAd span {display: block; font-size: 13px;}',
             head = document.getElementsByTagName('head')[0],
@@ -125,8 +125,8 @@ var AE = AE || {};
 
     // Rotate the ads by calling getAds every 10 seconds
     // TODO: If the query string has not changed, this should be cached.
-    /* if (AE.rotate !== false) {
-        setInterval(getAds, AE.rotateTimer || 10000);
-    } */
+    if (AE.rotate !== false) {
+        setInterval(function () {displayAd(localStorage.getItem('AppEnthusiastAds'))}, AE.rotateTimer || 10000);
+    }
 
 })(window, AE);
