@@ -5,7 +5,7 @@ Microsoft DPE App Enthusiasts
 
 Insert the following wherever you want the ad to be displayed:
     
-    <script src="http://appenthusiastsads.azurewebsites.net/scripts/getads.js" id="AEadControl"></script>
+    <script src="http://appenthusiastsads.azurewebsites.net/scripts/getads.min.js" id="AEadControl"></script>
 
 This will generate the following sample markup in your HTML:
     
