@@ -86,4 +86,4 @@ You can customize the ad control by declaring an AE object in a script tag above
 
 ## Feedback?
 
-Open an issue or email ryanjoy@microsoft.com.
+Open an issue or email ryanjoy@microsoft.com. 
