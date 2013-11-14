@@ -114,11 +114,11 @@ var AE = AE || {};
         head.appendChild(style);
     }
 
-    // Kick off the first call to the App Enthusiasts
-
-    if (localStorage.getItem('AppEnthusiastAds')) {
+    // Cache local content for 1 day
+    if (localStorage.getItem('AppEnthusiastAds') && localStorage.getItem('AppEnthusiastAdstimestamp') && ((new Date().getTime() - localStorage.getItem('AppEnthusiastAdstimestamp')) / 1000 /60 / 60 / 24) < 1) {
         displayAd(localStorage.getItem('AppEnthusiastAds'));
     } else {
+        // Kick off the first call to the App Enthusiasts
         getAds();
     }
     
