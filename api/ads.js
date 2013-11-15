@@ -17,13 +17,9 @@ exports.get = function(request, response) {
     if (request.query.creditRegion) 
         query.creditRegion = request.query.creditRegion;
     if (request.query.platform) 
-        query.platform = request.query.platform;
-    
-    // Limiting to Windows 8 for now.
-    query.platform = "WIN8";     
+        query.platform = request.query.platform; 
     
     appsTable.where(query).read({success: function (results) {
-        console.log(results);
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.send(statusCodes.OK, results);
     }})

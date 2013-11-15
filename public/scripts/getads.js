@@ -74,7 +74,7 @@ var AE = AE || {};
     }
 
     function displayAd(ads) {
-        var adJSON, ad, adString, div,
+        var adJSON, ad, adString, div, appURL,
             scriptElem = document.getElementById("AEadControl");
 
 
@@ -87,10 +87,12 @@ var AE = AE || {};
 
         adJSON = JSON.parse(ads);
         ad = shuffle(adJSON)[0];
+        appURL = (ad.platform === "WIN8") ? "http://apps.microsoft.com/windows/en-us/app/" : "http://windowsphone.com/s?appId=";
+        appURL = appURL + ad.storeId
 
-        adString = "<a href='http://apps.microsoft.com/windows/en-us/app/" + ad.storeId + "'>" +
+        adString = "<a href='" + appURL + "' target='_blank'>" +
             "<img src='" + ad.tileImageUrl + "' width='" + adWidth + "' />" +
-            "<span>Download " + ad.title + " for Windows 8 today!</span></a>"
+            "<span>Download " + ad.title + " for " + (ad.platform === 'WIN8' ? 'Windows 8' : 'Windows Phone') + " today!</span></a>"
 
         div.innerHTML = adString;
         scriptElem.parentNode.insertBefore(div, scriptElem)

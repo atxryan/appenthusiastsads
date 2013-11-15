@@ -64,7 +64,7 @@ You can customize the ad control by declaring an AE object in a script tag above
     </tr>
     <tr>
         <td>platform</td>
-        <td>"WIN8" only supported right now. WP8 and WP75 coming soon.</td>
+        <td>E.g. "WIN8", "WP8", or "WP75"</td>
     </tr>
     <tr>
         <td>City</td>
