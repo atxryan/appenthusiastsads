@@ -7,6 +7,8 @@ Insert the following wherever you want the ad to be displayed:
     
     <script src="http://appenthusiastsads.azurewebsites.net/scripts/getads.min.js" id="AEadControl"></script>
 
+*NOTE: The ad control will be inserted before the element with an ID of "AEadControl". If you'd prefer to serve the ad control HTML somewhere else, you can include `<div id="AEadControl"></div>` in your markup instead.
+
 This will generate the following sample markup in your HTML:
     
     <div id="AppEnthusiastAd">
