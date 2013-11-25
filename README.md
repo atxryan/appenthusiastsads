@@ -15,6 +15,14 @@ This will generate the following sample markup in your HTML:
 			<span>Download SIU Submit An Idea for Windows 8 today!</span>
 		</a>
 	</div>
+
+The following CSS style rules will also be injected in your document head element. You can overwrite this CSS injection via the 'injectStyles' option. You can also use these CSS selectors to customize your look and feel.
+
+	<style type="text/css">
+		#AppEnthusiastAd {text-align: center; padding: 0; margin: 0 auto; width: 200px; min-height: 175px;}
+		#AppEnthusiastAd img { padding: 0; margin: 0; border: none; }
+		#AppEnthusiastAd span {display: block; font-size: 13px;}
+	</style>
     
 ## Customization
 
