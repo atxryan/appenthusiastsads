@@ -92,7 +92,7 @@ var AE = AE || {};
 
         adString = "<a href='" + appURL + "' target='_blank'>" +
             "<img src='" + ad.tileImageUrl + "' width='" + adWidth + "' />" +
-            "<span>Download " + ad.title + " for " + (ad.platform === 'WIN8' ? 'Windows 8' : 'Windows Phone') + " today!</span></a>"
+            "<span>" + ad.title + " now available in the " + (ad.platform === 'WIN8' ? 'Windows 8' : 'Windows Phone') + " store!</span></a>"
 
         div.innerHTML = adString;
         scriptElem.parentNode.insertBefore(div, scriptElem)
