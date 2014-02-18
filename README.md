@@ -7,6 +7,8 @@ Insert the following wherever you want the ad to be displayed:
     
     <script src="http://appenthusiastsads.azurewebsites.net/scripts/getads.min.js" id="AEadControl"></script>
 
+*NOTE: The ad control will be inserted before the element with an ID of "AEadControl". If you'd prefer to serve the ad control HTML somewhere else, you can include `<div id="AEadControl"></div>` in your markup instead.
+
 This will generate the following sample markup in your HTML:
     
     <div id="AppEnthusiastAd">
@@ -15,6 +17,14 @@ This will generate the following sample markup in your HTML:
 			<span>Download SIU Submit An Idea for Windows 8 today!</span>
 		</a>
 	</div>
+
+The following CSS style rules will also be injected in your document head element. You can overwrite this CSS injection via the 'injectStyles' option. You can also use these CSS selectors to customize your look and feel.
+
+	<style type="text/css">
+		#AppEnthusiastAd {text-align: center; padding: 0; margin: 0 auto; width: 200px; min-height: 175px;}
+		#AppEnthusiastAd img { padding: 0; margin: 0; border: none; }
+		#AppEnthusiastAd span {display: block; font-size: 13px;}
+	</style>
     
 ## Customization
 
